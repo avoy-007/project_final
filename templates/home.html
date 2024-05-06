@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="..\static\css\home.css">
+</head>
+<body>
+    <h1>Welcome to predict the compressive strength of normal and high concrete and slump height</h1>
+    <div class="button-container">
+        <div class="button-item">
+            <button class="custom-button" onclick="location.href='concrete';">Concrete Analysis</button>
+            <p>Predict the compressive strength of concrete(normal).</p>
+        </div>
+        <div class="button-item">
+            <button class="custom-button" onclick="location.href='slump';">Slump Test</button>
+            <p>predict the slump height.</p>
+        </div>
+        <div class="button-item">
+            <button class="custom-button" onclick="location.href='highconcrete';">Advanced Concrete</button>
+            <p>predict the compressive strength of high concrete.</p>
+        </div>
+       
+    </div>
+
+
+    <script>var loading = document.getElementById("loading");
+    
+    window.addEventListener("load",function(){
+        loading.style.display="none"
+    })
+    </script>
+</body>
+</html>

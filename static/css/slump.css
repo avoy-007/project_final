@@ -1,0 +1,96 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url("../assets/img/Designer.png") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.answer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#box {
+    font-size: 20px;
+    padding: 80px;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95); /* Semi-transparent white to ensure text readability */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 30px;
+}
+
+.title {
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    min-width: 35px;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ced4da;
+    border-radius: 8px;
+    margin-left: 16px;
+}
+
+input[type="number"]:focus {
+    border-color: #80bdff;
+    outline: none;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+#loading {
+    background: #000 url(../assets/img/loader.gif) no-repeat center center;
+    background-size: 15%;
+    height: 100vh;
+    width:100%;
+    position: fixed;
+    z-index: 100;
+}
+

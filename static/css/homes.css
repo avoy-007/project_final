@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.button-item {
+    margin: 20px;
+    text-align: center;
+}
+
+.button-item img {
+    width: 200px;  /* Adjust width as necessary */
+    height: auto;  /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto 10px; /* Center image and space above button */
+}
+
+button {
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+}

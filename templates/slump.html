@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slump Prediction</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/slump.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+
+<body>
+    <div id="loading"></div>
+    <!-- <div id="loading">
+        <div id="wave"></div>
+        <div id="wave"></div>
+        <div id="wave"></div>
+        <div id="wave"></div>
+        <div id="wave"></div>
+        <div id="wave"></div>
+        <div id="wave"></div>
+        <div id="wave"></div>
+        <div id="wave"></div>
+        <div id="wave"></div>
+      </div> -->
+    <!-- <div
+        id="loading"
+        style="height: 100vh;width: 100%;position: absolute;top: 0;right: 0;left: 0;bottom: 0; background: linear-gradient(45deg,rgb(71, 215, 215),rgb(39, 8, 13));display: none;justify-content: center;align-items: center;">
+        <h1 style="color: white;font-size: 6rem;">LOADING ...</h1>
+    </div> -->
+    <main class="main-container" id="content">
+        <div class="card">
+            <div class="title"> Slump prediction</div>
+            <form id="predictionForm" name="sentMessage">
+                <div class="input-group">
+                    <i class="fas fa-cubes icon"></i>
+                    <input type="number" id="cement" name="cement" placeholder="Cement (kg)" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-mountain icon"></i>
+                    <input type="number" id="slag" name="slag" placeholder="Slag (kg)" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-vial icon"></i>
+                    <input type="number" id="ash" name="ash" placeholder="Ash (kg)" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-tint icon"></i>
+                    <input type="number" id="water" name="water" placeholder="Water (kg)" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-flask icon"></i>
+                    <input type="number" id="superPlastic" name="superPlastic" placeholder="Superplasticizer (kg)"
+                        required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-flask icon"></i>
+                    <input type="number" id="silica-fumes" name="silica-fumes" placeholder="silica-fumes (kg)"
+                        required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-cubes icon"></i>
+                    <input type="number" id="coarseAgg" name="coarseAgg" placeholder="Coarse Aggregate (kg)" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-cubes icon"></i>
+                    <input type="number" id="fineAgg" name="fineAgg" placeholder="Fine Aggregate (kg)" required>
+                </div>
+                <button id="sendMessageButton" class="submit-btn">Predict Strength</button>
+                <div id="resultDisplay" class="result-display" style="display: none">
+                    <h2 class="result-display">Predicted Compressive Strength</h2>
+                    <p id="resultValue" class="result-value"></p>
+                </div>
+            </form>
+        </div>
+        <div class="answer card">            
+            <h3>Predicted slump :</h3>
+            <div id="box">Empty</div>
+        </div>
+    </main>
+    <script src="static/js/slump_script.js"></script>
+
+    <script>var loading = document.getElementById("loading");
+    
+    window.addEventListener("load",function(){
+        loading.style.display="none"
+    })
+    </script>
+</body>
+
+</html>
