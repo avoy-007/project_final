@@ -24,7 +24,7 @@ def concrete():
     'fineAgg': 0,
     'age': 0,
 }
-    modelPath = r'C:\Users\aarya\Desktop\project_final\RandomForestRegressor.sav'
+    modelPath = r'models\RandomForestRegressor.sav'
 # Add entry to the database
     if request.method == "POST":
         # Check if the request contains JSON data
@@ -71,7 +71,7 @@ def slump():
     'fineAgg': 0,
     'silicafumes':0,
 }
-    modelPath=r'C:\Users\aarya\Desktop\project_final\grad_boost.sav'
+    modelPath=r'models\grad_boost.sav'
 
 # Add entry to the database
     if request.method == "POST":
@@ -120,7 +120,7 @@ def highconcrete():
     'age': 0,
     'silicafumes':0,
 }
-    modelPath=r'C:\Users\aarya\Desktop\project_final\linear.sav'
+    modelPath=r'models\linear.sav'
 
 # Add entry to the database
     if request.method == "POST":

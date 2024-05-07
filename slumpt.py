@@ -69,7 +69,7 @@ if __name__ == '__main__':
     # Example usage:
     # model = train_model()
     # # print(predict_concrete_strength(model))
-    savePath = r'C:\Users\aarya\Desktop\project_final\grad_boost.sav'
+    savePath = r'models\grad_boost.sav'
     # # print(type(pickle.dumps(model)))
     # # print(pickle.dumps(model))
     # with open(savePath, 'w') as fout:
