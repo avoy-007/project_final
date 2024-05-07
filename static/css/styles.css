@@ -2,7 +2,7 @@ body, html {
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
-    background: url("../assets/img/conc.jpg") no-repeat center center fixed;
+    background: url("../assets/img/tool.png") no-repeat center center fixed;
     background-size: cover;
     display: flex;
     flex-wrap: wrap;

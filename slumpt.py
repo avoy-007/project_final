@@ -24,7 +24,7 @@ def predict_slump(model, featureDict={}):
 
     # Make prediction
     prediction = model.predict(input_data)
-    return f"{prediction[0]:.2f} MPa"
+    return f"{prediction[0]:.2f} cm"
 
 if __name__ == '__main__':
     

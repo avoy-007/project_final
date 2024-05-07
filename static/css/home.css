@@ -9,17 +9,29 @@
 body,html {
   margin: 0;
   padding: 0;
-  background: url('../assets/img/Designer.jpg') no-repeat center fixed; /* Replace with your background image */
+  background-image: url('../assets/img/Designer.jpg') ; /* Replace with your background image */
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  position: absolute;
+  
+  
+  height: 100%;
 }
+
 .button-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: -20px;
   gap: 20px;
   padding: 20px;
+  color: white;
+ 
+  margin: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
 }
 .button-item {
   text-align: center;
@@ -29,7 +41,7 @@ body,html {
   background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
 }
 .custom-button {
-  background-color: #4CAF50; /* Green */
+  background-color: #0ede15; /* Green */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -43,4 +55,15 @@ body,html {
 }
 .button-item .custom-button + p {
   color: #240a57; /* Change this hex value to the color you prefer */
+}
+
+.head{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  flex-direction: column;
+  text-align: center;
+  font-size: 50px;
+  color: rgb(0, 51, 128);
 }
