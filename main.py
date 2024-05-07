@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, jsonify
 from compressive_concrete import load_model as load_compressive_model, predict_concrete_strength
 from slumpt import load_model as load_slump_model, predict_slump
 from high_com_con import load_model as load_highconcrete_model, predict_highconcretestrength
+from reverse import predict_and_calculate_ratios
 
 
 app = Flask(__name__)
@@ -51,7 +52,7 @@ def concrete():
             
             # Prepare the response data
             response_data = {"predicted_strength": yHat}
-            print(response_data)
+            # print(response_data)
             return jsonify(response_data), 200
         else:
             return jsonify({"error": "Request must be JSON"}), 400
@@ -99,7 +100,7 @@ def slump():
             
             # Prepare the response data
             response_data = {"predicted_strength": yHat}
-            print(response_data)
+            # print(response_data)
             return jsonify(response_data), 200
         else:
             return jsonify({"error": "Request must be JSON"}), 400
@@ -149,12 +150,41 @@ def highconcrete():
             
             # Prepare the response data
             response_data = {"predicted_strength": yHat}
-            print(response_data)
+            # print(response_data)
             return jsonify(response_data), 200
         else:
             return jsonify({"error": "Request must be JSON"}), 400
 
     return render_template(r"highconcrete.html")
+
+
+@app.route("/reverse", methods=["GET", "POST"])
+def reverse():
+# Add entry to the database
+    if request.method == "POST":
+        # Check if the request contains JSON data
+        if request.is_json:
+            # Get the JSON data
+            data = request.get_json()
+
+
+            # print(float(data.get("strength", 0)))
+            # Assume train_model and predict_concrete_strength are defined elsewhere
+            yHat = predict_and_calculate_ratios(float(data.get("strength", 0)))
+            
+            # Prepare the response data
+            response_data = {"cement": round(yHat[0], 3),
+                             "water": round(yHat[1], 3),
+                             "fine_aggregate": round(yHat[2], 3),
+                             "coarse_aggregate": round(yHat[3], 3),
+                             }
+            # print(response_data)
+            return jsonify(response_data), 200
+        else:
+            return jsonify({"error": "Request must be JSON"}), 400
+
+    return render_template(r"reverse.html")
+
 
 if __name__ == '__main__':
     import os
