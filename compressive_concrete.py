@@ -39,13 +39,9 @@ def predict_concrete_strength(model, featureDict={}):
     
 
 if __name__ == '__main__':
-    # Example usage:
-    # model = train_model()
-    # # print(predict_concrete_strength(model))
-    savePath = r'models\RandomForestRegressor.sav'
-    # # print(type(pickle.dumps(model)))
-    # # print(pickle.dumps(model))
-    # with open(savePath, 'w') as fout:
-    #    fout.write(str(pickle.dumps(model)))
+   
+
+    savePath = r'models/RandomForestRegressor.sav'
+   
     model2 = load_model(savePath)
     print(predict_concrete_strength(model2))

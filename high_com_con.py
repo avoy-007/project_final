@@ -30,7 +30,7 @@ def predict_highconcretestrength(model, featureDict={}):
 
 if __name__ == '__main__':
    
-    savePath = r'models\linear.sav'
+    savePath = r'models/linear.sav'
     
     model2 = load_model(savePath)
     print(predict_highconcretestrength(model2))

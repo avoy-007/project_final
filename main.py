@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify
-from compressive_concrete import load_model, predict_concrete_strength
-from slumpt import load_model, predict_slump
-from high_com_con import load_model, predict_highconcretestrength
+from compressive_concrete import load_model as load_compressive_model, predict_concrete_strength
+from slumpt import load_model as load_slump_model, predict_slump
+from high_com_con import load_model as load_highconcrete_model, predict_highconcretestrength
 
 
 app = Flask(__name__)
@@ -14,17 +14,17 @@ def home():
 
 @app.route("/concrete", methods=["GET", "POST"])
 def concrete():
-    featureDict = {
-    'cement': 0,
-    'slag': 0,
-    'ash': 0,
-    'water': 0,
-    'superPlastic': 0,
-    'coarseAgg': 0,
-    'fineAgg': 0,
-    'age': 0,
-}
-    modelPath = r'models\RandomForestRegressor.sav'
+#     featureDict = {
+#     'cement': 0,
+#     'slag': 0,
+#     'ash': 0,
+#     'water': 0,
+#     'superPlastic': 0,
+#     'coarseAgg': 0,
+#     'fineAgg': 0,
+#     'age': 0,
+# }
+    modelPath = r'models/RandomForestRegressor.sav'
 # Add entry to the database
     if request.method == "POST":
         # Check if the request contains JSON data
@@ -46,7 +46,7 @@ def concrete():
             featureDict['age'] = float(data.get("age", 0))
 
             # Assume train_model and predict_concrete_strength are defined elsewhere
-            model = load_model(modelPath)
+            model = load_compressive_model(modelPath)
             yHat = predict_concrete_strength(model, featureDict)
             
             # Prepare the response data
@@ -61,17 +61,17 @@ def concrete():
 @app.route("/slump", methods=["GET", "POST"])
 def slump():
 
-    featureDict = {
-    'cement': 0,
-    'slag': 0,
-    'ash': 0,
-    'water': 0,
-    'superPlastic': 0,
-    'coarseAgg': 0,
-    'fineAgg': 0,
-    'silicafumes':0,
-}
-    modelPath=r'models\grad_boost.sav'
+#     featureDict = {
+#     'cement': 0,
+#     'slag': 0,
+#     'ash': 0,
+#     'water': 0,
+#     'superPlastic': 0,
+#     'coarseAgg': 0,
+#     'fineAgg': 0,
+#     'silicafumes':0,
+# }
+    modelPath=r'models/grad_boost.sav'
 
 # Add entry to the database
     if request.method == "POST":
@@ -94,7 +94,7 @@ def slump():
             featureDict['silicafumes'] = float(data.get("silicafumes", 0))
 
             # Assume train_model and predict_concrete_strength are defined elsewhere
-            model = load_model(modelPath)
+            model = load_slump_model(modelPath)
             yHat = predict_slump(model, featureDict)
             
             # Prepare the response data
@@ -109,18 +109,18 @@ def slump():
 @app.route("/highconcrete", methods=["GET", "POST"])
 def highconcrete():
 
-    featureDict = {
-    'cement': 0,
-    'slag': 0,
-    'ash': 0,
-    'water': 0,
-    'superPlastic': 0,
-    'coarseAgg': 0,
-    'fineAgg': 0,
-    'age': 0,
-    'silicafumes':0,
-}
-    modelPath=r'models\linear.sav'
+#     featureDict = {
+#     'cement': 0,
+#     'slag': 0,
+#     'ash': 0,
+#     'water': 0,
+#     'superPlastic': 0,
+#     'coarseAgg': 0,
+#     'fineAgg': 0,
+#     'age': 0,
+#     'silicafumes':0,
+# }
+    modelPath=r'models/linear.sav'
 
 # Add entry to the database
     if request.method == "POST":
@@ -144,7 +144,7 @@ def highconcrete():
             featureDict['age'] = float(data.get("age", 0))
 
             # Assume train_model and predict_concrete_strength are defined elsewhere
-            model = load_model(modelPath)
+            model = load_highconcrete_model(modelPath)
             yHat = predict_highconcretestrength(model, featureDict)
             
             # Prepare the response data
